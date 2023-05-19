@@ -3,6 +3,7 @@ package com.learnautomationtestcases;
 import java.io.IOException;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.learnautomationpages.BaseClass;
@@ -13,6 +14,8 @@ public class LoginTestCRM extends BaseClass {
 	@Test
 	public void loginApp() throws InterruptedException, IOException {
 		
+		Reporter.log("========Running Login test ===", true );
+		 
 		logger=report.createTest("Login to ActiTime");
 	
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
@@ -21,6 +24,8 @@ public class LoginTestCRM extends BaseClass {
   
 		login.loginActitime(excel.getStringData("login", 0, 0), excel.getStringData("login", 0, 1));
 		logger.pass("Login Success");
+		Reporter.log("========Login test completed ===", true );
+
 	}
 	
 	@Test
