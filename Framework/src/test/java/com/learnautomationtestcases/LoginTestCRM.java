@@ -1,5 +1,7 @@
 package com.learnautomationtestcases;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
 import java.io.IOException;
 
 import org.openqa.selenium.support.PageFactory;
@@ -32,7 +34,7 @@ public class LoginTestCRM extends BaseClass {
 	public void loginApp1() throws InterruptedException, IOException {
 		
 		logger=report.createTest("Logout");
-		logger.fail("logout failed");
+		Assert.fail("logout failed");
 	}
 
 }

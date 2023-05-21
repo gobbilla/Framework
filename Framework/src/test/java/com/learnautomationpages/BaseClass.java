@@ -1,5 +1,8 @@
 package com.learnautomationpages;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
 
@@ -52,6 +55,7 @@ public class BaseClass {
 		    Reporter.log("Before Class - Browser and application is up and running", true );
 	}
 	
+
 	@AfterClass
 	public void tearDown()
 	{
@@ -67,7 +71,7 @@ public class BaseClass {
 
 		if(result.getStatus()==ITestResult.FAILURE)
 		{
-		logger.fail("fail", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshot(driver)).build());
+			logger.fail("fail", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshot(driver)).build());
 		}
 		else if(result.getStatus()==ITestResult.SUCCESS)
 		{
